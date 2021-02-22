@@ -3,7 +3,7 @@
 var version=1.2,
 updated="10 Feb 2021",
 note="Latest source in /alexdev/js/";
-note2="Current minified production version in jtzenterprise.com/js/";
+
 var lineBreak = lineBreak || "<br>"; // default linebreak (for html vs unix-style.)
 var submitButtonID = submitButtonID || "submitBtn";
 // adds "disabled" attribute to and element, given its ID, and changes its text
