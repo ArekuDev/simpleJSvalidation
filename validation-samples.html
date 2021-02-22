@@ -1,0 +1,400 @@
+<html>
+<head>
+	<title> JS Validation Test Page</title>
+	<!-- Bootstrap is recommended for full functionality, but not required. This sample page uses BS3. -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- jQuery-UI is only required if you want to use DatePicker. -->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+
+	<!-- the .error class is required!  Leave it here, or add it to your site's main CSS -->
+	<style>
+		.error { border: 2px red solid; margin:-1px;}
+	</style>
+
+</head>
+<body>
+<div class="container">
+	<h1> Sample form </h1>
+
+	<p> This is a sample form using our new Validation Utilities library.  View the source of this page to see documentation and usage notes.</p>
+
+	<form name="testform">
+		<div class="row">
+			<div class="col-md-6 form-group">
+				<label>Enter your First Name:</label>
+				<input type="text" name="firstName" class="form-control">
+			</div>
+			<div class="col-md-6 form-group">
+				<label>Enter your Last Name:</label>
+				<input type="text" name="firstName" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 form-group">
+				<label>Enter your Date of Birth</label>
+				<input type="text" name="dob" class="form-control">
+			</div>
+			<div class="col-md-6 form-group">
+				<label>Enter your Cell Phone Number:</label>
+				<input type="text" name="mobilePhone" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10 form-group">
+				<label>Street Address</label>
+				<input type="text" name="address" class="form-control">
+			</div>
+			<div class="col-md-2 form-group">
+				<label>ZIP Code</label>
+				<input type="text" name="zip" class="form-control">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<label>Enter your Email address</label>
+				<input type="text" name="email" class="form-control">
+			</div>
+			<div class="col-md-6 form-group">
+				<label>Verify Your Email Address:</label>
+				<input type="text" name="emailVerify" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 form-group">
+				<label>Create a User Name</label>
+				<input type="text" name="login" class="form-control">
+				<small>User Name must be at least 8 characters, and may contain only letters and numbers</small>
+			</div>
+			<div class="col-md-6 form-group">
+				<label>Create a Password:</label>
+				<input type="text" name="password" class="form-control">
+				<small>Password must be 6-20 characers and must contain: <br>
+					- At least 1 number<br>
+					- At least 1 upper-case letter<br>
+					- At least 1 lower-case letter<br>
+					- One special character, such as !,$,@,#, etc.
+				</small>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 form-group">
+				<label>Required checkbox</label><br>
+				<input type="checkbox" name="Iagree"> Check this. It's required.
+			</div>
+			<div class="col-md-6  form-group">
+				<label> URL prohibited textarea </label>
+				<textarea name="comments" class="form-control" placeholder = "Here is a textarea where you are not allowed to type in a URL. "></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<h3 class="text-center">Credit Card Information </h3>
+
+			<div class="form-group col-md-6">
+				<label>First Name on Card</label><input class="form-control" type="text" name="CCfirstname" id="CCfirstname">
+			</div>
+			<div class="form-group col-md-6">
+				<label>Last Name on Card</label><input class="form-control" type="text" name="CClastname" id="CClastname" value="">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-md-2">
+				<label>Card Type</label>
+				<select class="form-control" type="text" name="CCtype">
+					<option value=""></option>
+					<option value="V">Visa</option>
+					<option value="M">MasterCard</option>
+					<option value="D">Discover</option>
+					<option value="A">AmEx</option>
+				</select>
+			</div>
+			<div class="form-group col-md-4">
+				<label>Card Number</label>
+				<input class="form-control" type="text" name="CCNumber" value="">
+			</div>
+			<div class="form-group col-md-2">
+				<label>Exp Mo</label>
+				<select class="form-control" id = "exp_month" name = "CCexpmonth" title="CCexpmonth"> 
+					<option value=""> -- </option>
+					<option value=01> January</option>
+					<option value=02> February</option>
+					<option value=03> March</option>
+					<option value=04> April</option>
+					<option value=05> May</option>
+					<option value=06> June</option>
+					<option value=07> July</option>
+					<option value=08> August</option>
+					<option value=09> September</option>
+					<option value=10> October</option>
+					<option value=11> November</option>
+					<option value=12> December</option>
+				</select>
+			</div>
+			<div class="form-group col-md-2">
+				<label>Exp Yr</label>
+				<select class="form-control" id = "exp_year" name = "CCexpyear" title="CCexpyear">
+					<option value=""> -- </option>
+					<option>2021</option>
+					<option>2022</option>
+					<option>2023</option>
+					<option>2024</option>
+					<option>2025</option>
+					<option>2026</option>
+					<option>2027</option>
+					<option>2028</option>
+					<option>2029</option>
+					<option>2030</option>
+					<option>2031</option>
+				</select>
+			</div>
+			<div class="form-group col-md-2">
+				<label>CVV</label><input class="form-control" type="text" name="CVV">
+			</div>
+		</div><!-- /#creditcard -->
+
+		<div class="row">
+			<div class="col-md-12 text-center form-group">
+				<button type="button" id="submitBtn" class="btn btn-primary btn-lg"> Validate! </button>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="modal fade" id="modalWindow">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+				<h2 class="modal-title"></h2>
+			</div>
+			<div class="modal-body">
+				<span class="modal-text-here"></span>
+			</div>
+			<div class="modal-footer">
+				<div class="modal-footerText"></div>
+				<button id="modalButton" class="btn btn-default"></button>
+				<button id="modal2Button" class="hidden btn btn-default"></button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
+<!--- jQuery is required -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!--- Bootstrap is not required, but strongly recommended.-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--  If you want to use doModal Bootstrap is required.-->
+<script src="/js/doModal-1.2.js"></script>
+<!-- jQuery Mask is recommended, but not required. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<!-- jQuery-UI is only required if you want to use the datepicker -->
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
+<!-- ===== Required Dependency. Source available in /alexdev/js/  ======-->
+<script src = "/js/validation-utilities.min.js"></script>
+
+<!-- Examine the original (unminified) source: https://www.jtzenterprise.com/alexdev/js/validation-utilities.1.1.js -->
+
+<script>
+/// This function is optional.  It will replace the javascript alert() window with a nicer-looking popup modal.
+/// Requires Bootstrap and the doModal library.
+function alert(message){
+	console.log(message);
+	doModal("modalWindow","Error",message);
+}
+// USAGE NOTES:
+// Add this to your <form>:    onsubmit="return validateForm()"
+//
+// Set some config variables
+var submitButtonID = "submitBtn"; // the ID (not the name) of the submit button.
+var fieldsToValidate = { // names of all form fields you want to ensure have a value.
+	// Key = NAME of the form field; Value = readable label (to display in the errmsg)
+	"firstName":        "First Name",
+	"lastName":         "Last Name",
+	"dob":              "Date of Birth",
+	"address":          "Address",
+	"mobilePhone":      "Cell Phone Number",
+	"email":            "Your Email",
+	"emailVerify":      "Verify Email",
+	"Login":            "Create your login",
+	"Password":         "Create a password",
+	"CCNumber":         "Credit Card Number",
+	"Iagree": 			"I Agree checkbox must be checked."
+};
+
+// Optional:  If you want to fire the function using an onclick event, instead of an onsubmit:
+$("#submitBtn").click(function(){
+	disableButton("submitBtn","LOADING . . . ");
+	console.log("calling validateForm fn.");
+	if(validateForm()) {
+		doModal("modalWindow","It's All Good!","Congrats. Everything is good.  Here it would proceed and submit the form.");
+	} else {
+		console.log("It returned false.");
+		enableButton("submitBtn","Validate!");
+		return false;
+	}
+})
+
+function validateForm(){
+	submitButtonID = submitButtonID || "submitBtn";
+	if(!fieldsToValidate) return false;
+	disableButton(submitButtonID); // prevents double-tapping
+
+	// Checks that all inputs in the fieldsToValidate array have values
+	if(!fieldsHaveValue(fieldsToValidate)) return false;
+
+	// OTHER FIELD-SPECIFIC VALIDATION:
+	// Here are some examples of performing field-specific validation using the validation-utilities functions
+	// All validation functions use the NAME of the form field unless otherwise noted.
+	// Examine each of these functions and remove the ones you don't need.
+
+	// ERROR HANDLING
+	// Exit the function using the errorOut function when it finds a problem.
+	// usage:  errorOut("fieldName", "error message")
+	// fieldName is the NAME of the input or select field.
+	// It will add an .error class to the form field, alert with the given error message, then return false.
+	// Therefore, you can use the errorOut() function to exit the validateForm() function, as below:
+
+	// Validate an e-mail address
+	if(!validateEmail("email")) return errorOut("email","That email is not a valid address.");
+
+	// Ensure fields do not contain URLs
+	if(stringContainsURL("comments")) return errorOut("comments","You can not enter a URL in the comments.");
+
+	// Validate that two values match (such as an email or password-confirmation)
+	// Usage: twoValuesMatch(firstFieldName,secondFieldName,ignoreCase? )   ignoreCase is optional and defaults false.
+	if(!twoValuesMatch("email","emailVerify",true)) return errorOut("emailVerify","Your two emails do not match")
+
+	// Validate a U.S. phone number
+	// This validates a number is a valid US/Can/Mex phone number.
+	// International numbers are NOT supported, so do not use this if international phone numbers are a possibility.
+	if(!isValidPhoneNumber("mobilePhone")) return errorOut ("mobilePhone","That number is not a valid U.S./North American phone number");
+
+	// Validate a Credit Card number
+	// Returns "A","V","M", or "D" if the number given is a valid credit card number.
+	// Returns false if not.
+	// *** Please take note: This function requires the VALUE of the form field, not the name.***
+	if(!cctest($("input[name=CCNumber]").val())) return errorOut("CCNumber","That is not a valid credit card number");
+
+	// Validate length of a field
+	// Ensure a value is between min and max characters.
+	// validateLength(fieldName, min, max)  max is optional.
+	if(!validateLength("password",6,20)) return errorOut("password","Password must be between 6-20 characters");
+	if(!validateLength("login",8 )) return errorOut("copmments","Your login must contain at least 8 characters");
+
+	// Validate banned words/characters
+	// Ensure a string does not include a given regex string.
+	// usage: stringDoesNotInclude(regex, fieldName)
+	// returns TRUE if string does not include.
+	// regex must be a regex object not a string.
+	if(!stringDoesNotInclude(/[0-9]/g,"comments")) return errorOut("comments","Comments can not contain numbers");
+	if(!stringDoesNotInclude(/[^0-9A-Za-z.-]/g, "login")) return errorOut("login", "Username must contain ONLY letters and numbers and no special characters");
+
+	// Validate strength of password.
+	// returns FALSE if value of fieldname meets all of the given requirements.
+	// retruns a string containing an error message if any of the requirements are not met.
+	// Usage:  passwordStrengthIsBad(fieldname, requirements, linebr)
+	// requirements must be an array and must contain at least one of the following:
+	// 		mustHaveSpecial
+	// 		mustHaveLetter
+	// 		mustHaveUpperCase
+	// 		mustHaveLowerCase
+	//		mustHaveNumber
+	// Default requirements, if not provided, is "mustHaveLetter"
+	// linebr is what to use for line breaks in the error message output: \n unix style (i.e. alert window) or <br /> HTML (i.e. using doModal)
+	var pwErr = passwordStrengthIsBad("password",["mustHaveSpecial","mustHaveUpperCase","mustHaveLowerCase","mustHaveNumber"], "<br> &bull; ");
+	// the error handling is done slightly differently with this one, because it returns a message, not a boolean false like the others do.
+	if(pwErr)
+		return errorOut("password","Please use a more secure password. It must contain: <br> &bull; " + pwErr);
+
+	// Validate date
+	// Ensures a date is a real date between 1900 - 2099
+	// usage isValidDate(fieldName, format)
+	// format is optinal and may be either: "mm/dd/yyyy" or "mysql" Default if not given is mm/dd/yyyy
+	if(!isValidDate("dob")) return errorOut("dob","Date of Birth is not a valid date. Please re-type or use the popup DatePicker");
+
+	// Validate a ZIP
+	// Ensures a ZIP is a valid US, Canadian or Mexican ZIP.
+	if(!isValidZipCode("zip")) return errorOut("zip","ZIP code must be a valid North American ZIP.");
+
+	// Validate a checkbox is checked.
+	if(!boxIsChecked("Iagree")) return errorout("Iagree","You must check the I AGREE box before proceeding.");
+
+	// If it got here, then there were no problems.
+	return true;
+}
+
+////  You can also validate fields in real-time, such as:
+
+$("input[name=CCNumber]").on('blur',function(){
+	console.log("onblur: " + $(this).val());
+	cardType = cctest($(this).val());
+	if(!cardType) {
+		$(this).val(''); // clear the bad value
+		return errorOut("CCNumber","That is not a valid credit card number");
+	} else {
+		//OPTIONAL: auto-fill the Card Type <select> with the value if card number is valid.
+		$("select[name=CCtype]").val(cardType);
+	}
+});
+
+$("input[name=emailVerify]").on('blur',function(){
+	if(twoValuesMatch("email","emailVerify")) {
+		$("input[name=emailVerify]").removeClass('error');
+	}
+	else {
+		$(this).val(''); // clear the bad value
+		return errorOut("emailVerify","Your email addresses do not match.");
+	}
+});
+
+$(function(){
+	// MASKING form fields sample code:
+	// The following code requires jQuery mask.
+	// See jquery-mask docs at: https://igorescobar.github.io/jQuery-Mask-Plugin/docs.html
+
+	// Mask a phone number to either 1(000)000-0000 OR (000)000-0000 format
+	var moptions = {
+		placeholder: "1 (__) ____-____",
+		onKeyPress: function(cep, e, field, options) {
+			console.log(cep);
+			console.log(cep.length);
+		  	var r = /^1/;
+		  	var masks = ["0 (000) 000-0000", "(000) 000-0000"];
+		  	// if there is a leading 1, modify the mask to accommodate it.
+		  	var mask = cep.startsWith('1') || cep.startsWith('(1') ? masks[0] : masks[1];
+		  	$("input[name=mobilePhone]").mask(mask, options);
+		}
+	}
+	$("input[name=mobilePhone]").mask("0 (000) 000-0000", moptions);
+
+	// Mask the CC# appropriately whether it's AmEx or Visa/MC/etc
+	var ccoptions = {
+		placeholder: "____-____-____-____",
+		onChange: function(cep, e, field, options) {
+			numOnly = cep.replace(/\D/gm,"");
+			// 3759-876543-21001 test amex number
+		  	var masks = ["0000-000000-00000Z", "0000-0000-0000-0000"];
+			var mask = numOnly.length==15 ? masks[0] : masks[1];
+			// Amex is only 15 digits.  Everyone else = 16.
+		  	$("input[name=CCNumber]").mask(mask, ccoptions);
+		},
+		translation:  {'Z': {pattern: /[0-9]/, optional: true}}
+	}
+	$("input[name=CCNumber]").mask("0000-0000-0000-0000", ccoptions);
+
+	// Sample usage of Datepicker:
+	$("input[name=dob]").datepicker({
+		changeYear: true,
+		changeMonth: true,
+		//altFormat: "yy-mm-dd",
+		//altField: $("input[name=dob]"),
+		yearRange: "1900:<?php echo date('Y'); ?>"
+	});
+	// See all datepicker options at https://api.jqueryui.com/datepicker/
+
+});
+</script>
+
+
